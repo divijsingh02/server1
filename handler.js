@@ -1,20 +1,20 @@
 exports.handler = async (event) => {
-    const n = event.n;
-    const factorial = calculateFactorial(n);
-    
+  const n = parseInt(event.queryStringParameters.n);
+
+  if (isNaN(n) || n < 0) {
     return {
-      statusCode: 200,
-      body: JSON.stringify({ factorial })
+      statusCode: 400,
+      body: 'Invalid input. Please provide a non-negative integer.',
     };
-  };
-  
-  function calculateFactorial(n) {
-    let factorial = 1;
-    
-    for (let i = 2; i <= n; i++) {
-      factorial *= i;
-    }
-    
-    return factorial;
   }
-  
+
+  let factorial = 1;
+  for (let i = 1; i <= n; i++) {
+    factorial *= i;
+  }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ factorial }),
+  };
+};
