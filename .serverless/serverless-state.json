@@ -175,7 +175,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/factorial-function/local/1684904167231-2023-05-24T04:56:07.231Z/factorial-function.zip"
+                "S3Key": "serverless/factorial-function/local/1684904410753-2023-05-24T05:00:10.753Z/factorial-function.zip"
               },
               "Handler": "handler.handler",
               "Runtime": "nodejs18.x",
@@ -193,14 +193,14 @@
               "FactorialLogGroup"
             ]
           },
-          "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0": {
+          "FactorialLambdaVersiontmxmWK5O0KISzWbcd2439K25JUWxChIvq9wxFQXXEo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "FactorialLambdaFunction"
               },
-              "CodeSha256": "X3rFKw82FfgX/xsgf7UnbRHEl9+eBXZDJgKoZOqwSos="
+              "CodeSha256": "t5WqQ0PIWD9O9a+CMa9ZjdNelKZPTl2s25uY3VxTrpo="
             }
           },
           "ApiGatewayRestApi": {
@@ -276,7 +276,7 @@
               "FactorialLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1684904158108": {
+          "ApiGatewayDeployment1684904401440": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -338,7 +338,7 @@
           "FactorialLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0"
+              "Ref": "FactorialLambdaVersiontmxmWK5O0KISzWbcd2439K25JUWxChIvq9wxFQXXEo"
             },
             "Export": {
               "Name": "sls-factorial-function-local-FactorialLambdaFunctionQualifiedArn"
@@ -485,7 +485,7 @@
         "timeout": 6,
         "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0"
+        "versionLogicalId": "FactorialLambdaVersiontmxmWK5O0KISzWbcd2439K25JUWxChIvq9wxFQXXEo"
       }
     },
     "configValidationMode": "warn",
@@ -510,7 +510,7 @@
     "artifact": "/Users/divij.singhuipath.com/newproj/factorial-function/.serverless/factorial-function.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/factorial-function/local/1684904167231-2023-05-24T04:56:07.231Z",
+    "artifactDirectoryName": "serverless/factorial-function/local/1684904410753-2023-05-24T05:00:10.753Z",
     "artifact": "factorial-function.zip"
   }
 }
