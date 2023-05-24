@@ -1,0 +1,19 @@
+service: factorial-function
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+  endpoint: http://localhost:4566
+  stage: local
+
+plugins:
+  - serverless-localstack
+
+functions:
+  factorial:
+    handler: handler.handler
+    events:
+      - http:
+          path: factorial
+          method: GET
