@@ -6,7 +6,7 @@
     },
     "provider": {
       "name": "aws",
-      "runtime": "nodejs14.x",
+      "runtime": "nodejs18.x",
       "region": "us-east-1",
       "endpoint": "http://localhost:4566",
       "stage": "local",
@@ -175,10 +175,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/factorial-function/local/1684866418291-2023-05-23T18:26:58.291Z/factorial-function.zip"
+                "S3Key": "serverless/factorial-function/local/1684904167231-2023-05-24T04:56:07.231Z/factorial-function.zip"
               },
               "Handler": "handler.handler",
-              "Runtime": "nodejs14.x",
+              "Runtime": "nodejs18.x",
               "FunctionName": "factorial-function-local-factorial",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -193,14 +193,14 @@
               "FactorialLogGroup"
             ]
           },
-          "FactorialLambdaVersionfTTPWsYY5YvYNIZ3I8uoQb2qlzf4wVqOC8d8Dx9860": {
+          "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "FactorialLambdaFunction"
               },
-              "CodeSha256": "9ibrAbtcxKkOoEUTc0viW+84nvbFqpmACSnxwgcDdjk="
+              "CodeSha256": "X3rFKw82FfgX/xsgf7UnbRHEl9+eBXZDJgKoZOqwSos="
             }
           },
           "ApiGatewayRestApi": {
@@ -276,7 +276,7 @@
               "FactorialLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1684866410622": {
+          "ApiGatewayDeployment1684904158108": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -338,7 +338,7 @@
           "FactorialLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "FactorialLambdaVersionfTTPWsYY5YvYNIZ3I8uoQb2qlzf4wVqOC8d8Dx9860"
+              "Ref": "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0"
             },
             "Export": {
               "Name": "sls-factorial-function-local-FactorialLambdaFunctionQualifiedArn"
@@ -456,6 +456,13 @@
       },
       "vpc": {}
     },
+    "custom": {
+      "localstack": {
+        "stages": [
+          "local"
+        ]
+      }
+    },
     "plugins": [
       "serverless-localstack"
     ],
@@ -476,9 +483,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs14.x",
+        "runtime": "nodejs18.x",
         "vpc": {},
-        "versionLogicalId": "FactorialLambdaVersionfTTPWsYY5YvYNIZ3I8uoQb2qlzf4wVqOC8d8Dx9860"
+        "versionLogicalId": "FactorialLambdaVersionfG32N78snpqVIFHna5hJJd5br68VcToy9jS8yyEx0"
       }
     },
     "configValidationMode": "warn",
@@ -491,6 +498,9 @@
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
       },
+      "custom": {
+        "$ref": "$[\"service\"][\"custom\"]"
+      },
       "functions": {
         "$ref": "$[\"service\"][\"functions\"]"
       }
@@ -500,7 +510,7 @@
     "artifact": "/Users/divij.singhuipath.com/newproj/factorial-function/.serverless/factorial-function.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/factorial-function/local/1684866418291-2023-05-23T18:26:58.291Z",
+    "artifactDirectoryName": "serverless/factorial-function/local/1684904167231-2023-05-24T04:56:07.231Z",
     "artifact": "factorial-function.zip"
   }
 }
