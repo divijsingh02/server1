@@ -10,6 +10,11 @@ provider:
 plugins:
   - serverless-localstack
 
+custom:
+  localstack:
+    stages:
+      - local
+
 functions:
   factorial:
     handler: handler.handler
